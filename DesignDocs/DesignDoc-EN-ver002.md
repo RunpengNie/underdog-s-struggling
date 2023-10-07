@@ -8,7 +8,7 @@
 
 #### (2) Backend
 - Coding Language: Java
-- Ecosystem: Restful API/Spring Cloud/Spring Boot/MySQL
+- Ecosystem: Restful API/Spring Cloud/Spring Boot/~~MySQL~~/DynamoDB
 
 ## 2. Deployment
 
@@ -41,7 +41,7 @@
     - UserName
     - Password
     - Role (FK, to Roles.RoleID)
-    - Email
+    - Email (Unique)
     - RegistrationDate
     ~~- IsPaidMember~~
 
@@ -51,7 +51,9 @@
 
 - ##### Entries: Store knowledge entries
     - EntryID (PK)
-    - Title
+    - Title (Unique)
+    - Topic/SubTitle
+    - Order
     - Content
     - AuthorID (FK, to Users.UserID)
     - CreatedDate
