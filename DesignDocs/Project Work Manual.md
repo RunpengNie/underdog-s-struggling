@@ -56,21 +56,21 @@ Welcome to our GitHub project team! We're excited to have you on board. This wor
    - TBD
 
 ## 8. Deployment
-    - TBD
+   - TBD
 
 ## 9. Collaboration and Communication
-    - Try to discuss on github first. 
-    - If github discussion cannot work, make a 1 on 1 zoom meeting. 
-    - If 1 on 1 zoom meeting cannot solve the disagreements, talk about it on weekly all developer meeting.  
-    - Never discuss any technical issue in WeChat!
+   - Try to discuss on github first. 
+   - If github discussion cannot work, make a 1 on 1 zoom meeting. 
+   - If 1 on 1 zoom meeting cannot solve the disagreements, talk about it on weekly all developer meeting.  
+   - Never discuss any technical issue in WeChat!
 
 ## 10. Security and Data Protection
-    - TBD
+   - TBD
 
 ## 11. Documentation
-    - TBD
+   - TBD
 
 ## 12. Team Resources
-    - Ask Runpeng Nie for more details.
+   - Ask Runpeng Nie for more details.
 
 By following this work manual, you'll become an integral part of our project team and help us achieve our goals effectively. We're here to support your growth and success within the project. Welcome aboard, and let's work together to build amazing software!
