@@ -58,6 +58,7 @@
     - AuthorID (FK, to Users.UserID)
     - CreatedDate
     - LastModifyDate
+    - KnowledgeLevel
 
 - ##### ModificationRecords: Store modification records of entries
     - RecordID (PK)
@@ -76,7 +77,11 @@
 ##### (3) 
 ## 4. Milestones
 (1) Create a web project that can be run locally with some content and a simple UI
+
 (2) Ensure that the locally running project has relatively complete content, a simple UI, and basic user registration and management functions
+
 (3) Deploy the project to the remote end and access it through the domain name; support user registration, management, and other functions
+
 (4) Include richer content, including bilingual pages, advertisements, and beautiful UI
+
 (5) Achieve more mature technology, better security, and increased carrying capacity
