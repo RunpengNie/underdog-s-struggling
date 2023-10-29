@@ -8,7 +8,7 @@
 
 #### (2) Backend
 - Coding Language: Java
-- Ecosystem: Restful API/Spring Cloud/Spring Boot/~~MySQL~~/DynamoDB
+- Ecosystem: Restful API/Spring Cloud/Spring Boot/MySQL
 
 ## 2. Deployment
 
@@ -23,10 +23,11 @@
 
 ## 3. Program Logic
 
-#### (1) 3 different type of users
-  - Manager/Developer
+#### (1) 3 different type of users and guests
+  - Administrator/Developer
+  - VIP user(Paid user)
   - Registered User
-  - Guest User/Unregistered User
+  - Guest User/Unregistered User(they won't appear in our database)
 #### (2) 
 #### (3) 
 
