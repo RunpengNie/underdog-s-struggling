@@ -23,7 +23,6 @@ CREATE TABLE Roles(RoleID INT, RoleName VARCHAR(20), PRIMARY KEY (RoleID));
 --     CreatedDate
 --     LastModifyDate
 --     KnowledgeLevel
-
 CREATE TABLE Entries(EntryID INT, Title VARCHAR(1111) UNIQUE, Topic VARCHAR(255), Index INT, Content VARCHAR(1111),
 AuthorID INT, CreatedDate Datetime, LastModified DateTime, KnowledgeLevel INT, PRIMARY KEY(EntryID), FOREIGN KEY(AuthorID) REFERENCES Users(UserID));
 
@@ -42,6 +41,5 @@ CREATE TABLE Tags(TagID INT, TagName VARCHAR(20));
 --     EntryTagID (PK)
 --     EntryID (FK, to Entries.EntryID)
 --     TagID (FK, to Tags.TagID)
-
 CREATE TABLE EntryTags(EntryTagID INT, EntryID INT, TagID INT, PRIMARY KEY(EntryTagID), FOREIGN KEY(EntryID) REFERENCES Entries(EntryID), FOREIGN KEY(TagID) REFERENCES Tags(TagID));
 
