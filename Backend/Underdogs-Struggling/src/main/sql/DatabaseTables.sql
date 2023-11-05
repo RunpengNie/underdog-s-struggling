@@ -6,7 +6,7 @@
 --     Role (FK, to Roles.RoleID)
 --     Email (Unique)
 --     RegistrationDate
-CREATE TABLE Users(UserID INT UNIQUE, Username VARCHAR(20) UNIQUE, Password VARCHAR(20) NOT NULL, Role INT , Email VARCHAR(255) UNIQUE, RegistrationDate Datetime, PRIMARY KEY (UserID));
+CREATE TABLE Users(UserID INT, Username VARCHAR(20) UNIQUE, Password VARCHAR(20) NOT NULL, Role INT , Email VARCHAR(255) UNIQUE, RegistrationDate Datetime, PRIMARY KEY (UserID), FOREIGN KEY (Roles) REFERENCES Role(ID));
 
 -- Roless: Store roles information
 --     RoleID (PK)
@@ -23,7 +23,7 @@ CREATE TABLE Roles(RoleID INT, RoleName VARCHAR(20), PRIMARY KEY (RoleID));
 --     CreatedDate
 --     LastModifyDate
 --     KnowledgeLevel
-CREATE TABLE Entries(EntryID INT, Title VARCHAR(1111) UNIQUE, Topic VARCHAR(255), Index INT, Content VARCHAR(1111),
+CREATE TABLE Entries(EntryID INT, Title VARCHAR(50) UNIQUE, Topic VARCHAR(255), Index INT, Content TEXT,
 AuthorID INT, CreatedDate Datetime, LastModified DateTime, KnowledgeLevel INT, PRIMARY KEY(EntryID), FOREIGN KEY(AuthorID) REFERENCES Users(UserID));
 
 -- ModificationRecords: Store modification records of entries
