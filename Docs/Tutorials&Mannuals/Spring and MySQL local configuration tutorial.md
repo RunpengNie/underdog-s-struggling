@@ -5,6 +5,7 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
 ## Table of Contents
 1. [Prerequisite](#prerequisite)
 2. [Steps](#steps)
+3. [References](#references)
 
 
 ## 1. Prerequisite
@@ -48,8 +49,30 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
       - Run the SQL scripts you have to create the tables. 
       - Insert some test data. 
    - Connect to the database with your Spring project
+      - Add MySQL dependency: 
+      Insert this to your `pom.xml`:
+      ```
+      <dependency>
+         <groupId>mysql</groupId>
+         <artifactId>mysql-connector-java</artifactId>
+         <version>8.0.23</version> <!-- Change the version number according to actual situation -->
+      </dependency>
 
-## 5. Reference: 
+      ```
+      - Configure the database connection info
+      Add this code into your `application.properties` or `application.yml`(in our project, we are using `application.properties`)
+      ```
+      spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+      spring.datasource.username=your_username
+      spring.datasource.password=your_password
+
+      # Hibernate properties
+      spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+      spring.jpa.hibernate.ddl-auto=update
+      ```
+   - Write Entity class to achieve Object-Relation mapping with Database 
+
+## 3. References: 
    - install MySQL and MySQL workbench: https://www.youtube.com/watch?v=zRfI79BHf3k
    - setup pw after installation: https://stackoverflow.com/questions/7864276/cannot-connect-to-database-server-mysql-workbench
    - Create database with MySQL workbench: https://www.youtube.com/watch?v=wALCw0F8e9M
