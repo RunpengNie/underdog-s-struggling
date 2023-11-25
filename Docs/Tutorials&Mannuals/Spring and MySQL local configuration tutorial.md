@@ -43,7 +43,7 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
    - Create database
       - First open and connect to your local server
       - navigate to `Schemas`. Since we did not remove the test database, we should have a default database `sys` like this: 
-      - ![MySQL workbench](../Resources/MySQL.png)
+        ![MySQL workbench](../Resources/MySQL.png)
       - Click the button in the picture and create the databse with the name you want. 
       - Remember, you do not need to create any table or insert any data into it, we are using JPA, JPA will create tables according to our code implementation.
    - Connect to the database with your Spring project(you do not need to do these since I have done this for you, but I still believe it will be a good reference)
@@ -60,7 +60,6 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
       ```
       - Configure the database connection info
       Add this code into your `application.properties` or `application.yml`(in our project, we are using `application.properties`)
