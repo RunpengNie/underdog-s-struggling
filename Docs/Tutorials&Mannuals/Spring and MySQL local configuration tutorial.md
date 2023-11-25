@@ -12,7 +12,6 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
    - Ubuntu 20/22 [this tutortial should work for ubuntu18 too]
    - IntelliJ IDEA
    - JDK 17 or higher [Please remember to use LTS version]
-   - Some SQL scripts that can create tables
 
 ## 2. Steps
    - Install MySQL
@@ -46,17 +45,21 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
       - navigate to `Schemas`. Since we did not remove the test database, we should have a default database `sys` like this: 
       - ![MySQL workbench](../Resources/MySQL.png)
       - Click the button in the picture and create the databse with the name you want. 
-      - Run the SQL scripts you have to create the tables. 
-      - Insert some test data. 
-   - Connect to the database with your Spring project
+      - Remember, you do not need to create any table or insert any data into it, we are using JPA, JPA will create tables according to our code implementation.
+   - Connect to the database with your Spring project(you do not need to do these since I have done this for you, but I still believe it will be a good reference)
       - Add MySQL dependency: 
       Insert this to your `pom.xml`:
-      ```
+      ```xml
       <dependency>
          <groupId>mysql</groupId>
          <artifactId>mysql-connector-java</artifactId>
-         <version>8.0.23</version> <!-- Change the version number according to actual situation -->
+         <version>8.0.33</version> <!-- Change the version number according to actual situation -->
       </dependency>
+
+      <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 
       ```
       - Configure the database connection info
@@ -70,12 +73,127 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
       spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
       spring.jpa.hibernate.ddl-auto=update
       ```
-   - Write Entity class to achieve Object-Relation mapping with Database 
+
+      - Write a simple entity class
+      In this step, I wrote a simple `Role` class as an example. 
+      ```java
+      @Entity
+      @Table(name = "Roles")
+      public class Role {
+         @Id
+         @GeneratedValue(strategy = GenerationType.AUTO)
+         private int roleId;
+
+         @Column(name="RoleName")
+         private String roleName;
+
+         public Role() {
+         }
+
+         public Role(int roleId, String roleName) {
+            this.roleId = roleId;
+            this.roleName = roleName;
+         }
+
+         public int getRoleID() {
+            return roleId;
+         }
+
+         public void setRoleId(int roleId) {
+            this.roleId = roleId;
+         }
+
+         public String getRoleName() {
+            return roleName;
+         }
+
+         public void setRoleName(String roleName) {
+            this.roleName = roleName;
+         }
+      }
+      ```
+
+      - Add Data Access Object(DAO) layer
+      In this step, I wrote a simple `RoleRepository` class as an example. 
+      ```java
+      @Repository
+      public interface RoleRepository extends CrudRepository<Role, Integer> {
+         Role save(Role entity);
+
+         void deleteRoleByRoleId(int id);
+
+         Optional<Role> findByRoleId(int RoleID);
+
+         Optional<Role> findByRoleName(String roleName);
+
+         boolean existsById(int RoleID);
+      }
+      ```
+
+      - Add Service layer
+      In this step, I added a simple `RoleService` interface
+      ```java
+      public interface RoleService {
+         Optional<Role> findRoleById(int roleId);
+
+         Role addRole(Role role);
+
+         void deleteRole(int roleId);
+      }
+      ```
+      and implemented it by `RoleServiceImpl` class as an example. 
+      ```java
+      @Service
+      public class RoleServiceImpl implements RoleService {
+
+         @Autowired
+         private RoleRepository roleRepository;
+
+         @Override
+         public Optional<Role> findRoleById(int roleId) {
+            return roleRepository.findByRoleId(roleId);
+         }
+
+         @Override
+         public Role addRole(Role role) {
+            return roleRepository.save(role);
+         }
+
+         @Override
+         public void deleteRole(int roleId) {
+            roleRepository.deleteRoleByRoleId(roleId);
+         }
+      }
+      ```
+
+   - In the end, all you need to do run the `Application.java` and check in the database whether the roles table was successfully created and whether it contains the piece of data you inserted.
+   ```java
+   @SpringBootApplication
+   public class Application {
+
+      public static void main(String[] args) {
+         SpringApplication.run(Application.class, args);
+      }
+
+      @Bean
+      CommandLineRunner runner(RoleRepository repository) {
+         return args -> {
+
+            Role role = new Role();
+            role.setRoleName("TestRole");
+
+            repository.save(role);
+            Optional<Role> saved = repository.findByRoleId(role.getRoleID());
+         };
+      }
+   }
+   ```
 
 ## 3. References: 
    - install MySQL and MySQL workbench: https://www.youtube.com/watch?v=zRfI79BHf3k
    - setup pw after installation: https://stackoverflow.com/questions/7864276/cannot-connect-to-database-server-mysql-workbench
    - Create database with MySQL workbench: https://www.youtube.com/watch?v=wALCw0F8e9M
+   - Accessing data with MySQL: https://spring.io/guides/gs/accessing-data-mysql/
 
 
 
