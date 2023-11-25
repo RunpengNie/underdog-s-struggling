@@ -57,9 +57,9 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
       </dependency>
 
       <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-data-jpa</artifactId>
+      </dependency>
       ```
       - Configure the database connection info
       Add this code into your `application.properties` or `application.yml`(in our project, we are using `application.properties`)
