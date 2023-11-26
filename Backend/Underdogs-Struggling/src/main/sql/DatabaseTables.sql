@@ -2,7 +2,7 @@
 --     RoleID (PK)
 --     RoleName
 CREATE TABLE Roles(
-    RoleID INT,
+    RoleID INT AUTO_INCREMENT,
     RoleName VARCHAR(20),
     PRIMARY KEY (RoleID)
 );
@@ -24,7 +24,7 @@ CREATE TABLE Tags(
 --     Email (Unique)
 --     RegistrationDate
 CREATE TABLE Users(
-    UserID INT UNIQUE,
+    UserID INT AUTO_INCREMENT,
     Username VARCHAR(20) UNIQUE,
     Password VARCHAR(20) NOT NULL,
     Role INT,
@@ -78,7 +78,7 @@ CREATE TABLE ModificationRecords(
 --     EntryID (FK, to Entries.EntryID)
 --     TagID (FK, to Tags.TagID)
 CREATE TABLE EntryTags(
-    EntryTagID INT,
+    EntryTagID INT AUTO_INCREMENT,
     EntryID INT,
     TagID INT,
     PRIMARY KEY(EntryTagID),
