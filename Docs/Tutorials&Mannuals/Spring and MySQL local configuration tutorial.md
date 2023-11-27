@@ -1,19 +1,24 @@
 # Spring and MySQL local configuration tutorial
 
 This tutorial is designed to help you get started with MySQL and your SpringBoot project. 
+Authors: Jerry Nie, Tony Liu
 
 ## Table of Contents
 1. [Prerequisite](#prerequisite)
-2. [Steps](#steps)
-3. [References](#references)
+2. [Steps based on different operating systems](#steps)
+3. [Shared Steps](#sharedsteps)
+4. [References](#references)
 
 
 ## 1. Prerequisite
-   - Ubuntu 20/22 [this tutortial should work for ubuntu18 too]
    - IntelliJ IDEA
    - JDK 17 or higher [Please remember to use LTS version]
+   - Reuqired OS: 
+      - Ubuntu 20/22 [which should also work for ubuntu18 and MacOS]
+      - Windows 10/11
 
-## 2. Steps
+## 2. Steps based on different operating systems
+### 2.1 Ubuntu 20/22 [which should also work for ubuntu18 and MacOS]
    - Install MySQL
       - (1) run `sudo apt update`
       - (2) run `sudo apt install mysql-server`
@@ -46,6 +51,19 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
         ![MySQL workbench](../Resources/MySQL.png)
       - Click the button in the picture and create the databse with the name you want. 
       - Remember, you do not need to create any table or insert any data into it, we are using JPA, JPA will create tables according to our code implementation.
+
+### 2.2 Windows 10/11
+
+   
+
+## 3. Shared Steps
+   - Create database
+      - First open and connect to your local server
+      - navigate to `Schemas`. Since we did not remove the test database, we should have a default database `sys` like this: 
+        ![MySQL workbench](../Resources/MySQL.png)
+      - Click the button in the picture and create the databse with the name you want. 
+      - Remember, you do not need to create any table or insert any data into it, we are using JPA, JPA will create tables according to our code implementation.
+   - **Remember, you don't need to do the next steps, I have already completed them for you.**
    - Connect to the database with your Spring project(you do not need to do these since I have done this for you, but I still believe it will be a good reference)
       - Add MySQL dependency: 
       Insert this to your `pom.xml`:
@@ -188,7 +206,7 @@ This tutorial is designed to help you get started with MySQL and your SpringBoot
    }
    ```
 
-## 3. References: 
+## 4. References: 
    - install MySQL and MySQL workbench: https://www.youtube.com/watch?v=zRfI79BHf3k
    - setup pw after installation: https://stackoverflow.com/questions/7864276/cannot-connect-to-database-server-mysql-workbench
    - Create database with MySQL workbench: https://www.youtube.com/watch?v=wALCw0F8e9M
