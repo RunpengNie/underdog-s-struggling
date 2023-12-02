@@ -53,6 +53,11 @@ Authors: Jerry Nie, Tony Liu
       - Remember, you do not need to create any table or insert any data into it, we are using JPA, JPA will create tables according to our code implementation.
 
 ### 2.2 Windows 10/11
+    - Download and run MySQL Installer from here: https://dev.mysql.com/downloads/installer/
+    - Choose "Full installation." Should install the following itms
+        ![Win11 MySQL Installation Page](../Resources\MySQL_install_screenshot.png)
+    - choose default for everything until the following screen is reached. Make sure all fields match with the image below.
+        ![MySQL Type & Networking](../Resources/MySQL_post_installation.png)
 
    
 
