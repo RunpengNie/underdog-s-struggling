@@ -38,12 +38,12 @@ Authors: Jerry Nie, Tony Liu
          ```
       - (3) run `sudo mysql_secure_installation`. This command is used to enhance the security of a MySQL server. 
       After the command is executed, the system will ask you do you want to setup VALIDATE PASSWORD component. You can choose `No` here. 
-      Although we did not use VALIDATE PASSWORD component here, we still need to set a password for our root account. If the setting process
-      does not show up, remeber to run `sudo mysql -u root` and then run `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';`.
-      Remove anonymous users: chooes `Yes`. 
-      Disallow root login remotely: chooes `Yes`. 
-      Remove test database and access to it： `No`.
-      Reload privilege tables now: `Yes`. 
+        - Although we did not use VALIDATE PASSWORD component here, we still need to set a password for our root account. If the setting process
+        does not show up, remeber to run `sudo mysql -u root` and then run `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';`.
+        - Remove anonymous users: chooes `Yes`. 
+        - Disallow root login remotely: chooes `Yes`. 
+        - Remove test database and access to it： `No`.
+        - Reload privilege tables now: `Yes`. 
    - Install MySQL Workbench: run `sudo snap install mysql-workbench-community`
 
 ### 2.2 Windows 10/11
