@@ -45,12 +45,6 @@ Authors: Jerry Nie, Tony Liu
       Remove test database and access to it： `No`.
       Reload privilege tables now: `Yes`. 
    - Install MySQL Workbench: run `sudo snap install mysql-workbench-community`
-   - Create database
-      - First open and connect to your local server
-      - navigate to `Schemas`. Since we did not remove the test database, we should have a default database `sys` like this: 
-        ![MySQL workbench](../Resources/MySQL.png)
-      - Click the button in the picture and create the databse with the name you want. 
-      - Remember, you do not need to create any table or insert any data into it, we are using JPA, JPA will create tables according to our code implementation.
 
 ### 2.2 Windows 10/11
 
