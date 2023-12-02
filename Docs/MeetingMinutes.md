@@ -33,7 +33,7 @@
 
 #### Action Items
 - Vincent: 
-    - Add Trello to manage issues[optional]. 
+    - Add Trello to manage issues(optional). 
     - Update work mannual with new requirement(1 PR with 1 commit). **Dec 3rd 2023**
     - Provide resoures/docs about how to connect MySQL deployed on AWS EC2(from Nov 11th 2023). **Dec 8th 2023**
 - Tony: 
