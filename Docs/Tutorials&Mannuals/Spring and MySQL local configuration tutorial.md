@@ -48,9 +48,9 @@ Authors: Jerry Nie, Tony Liu
 
 ### 2.2 Windows 10/11
 Download and run MySQL Installer from here: https://dev.mysql.com/downloads/installer/
-- Choose "Full installation." Should install the following itms
-    ![Win11 MySQL Installation Page](../Resources\MySQL_install_screenshot.png)
-- Choose default for everything until the following screen is reached. Make sure all fields match with the image below.
+- Choose "Full installation." Should install the following items.  
+    ![Win11 MySQL Installation Page](../Resources/MySQL_install_screenshot.png)
+- Use default settings for everything until the following screen is reached. Make sure all fields match with the image below.
     ![MySQL Type & Networking](../Resources/MySQL_post_installation.png)
 
    
