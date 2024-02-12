@@ -3,7 +3,7 @@ package com.TheTroisMousquetaires.Underdogs.Struggling.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Roles")
+@Table(name = "roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
