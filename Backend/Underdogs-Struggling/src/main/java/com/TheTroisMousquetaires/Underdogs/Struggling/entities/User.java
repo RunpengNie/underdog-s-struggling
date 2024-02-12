@@ -10,13 +10,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
-    @Column(name="UserName")
+    @Column(name="user_name")
     private String userName;
-    @Column(name="Role")
+    @Column(name="role")
     private Role role;
-    @Column(name="Email")
+    @Column(name="email")
     public String email;
-    @Column(name="RegistrationDate")
+    @Column(name="registration_date")
     private ZonedDateTime registrationDate;
 
     public User() {
@@ -29,4 +29,39 @@ public class User {
         this.registrationDate = ZonedDateTime.now(ZoneOffset.UTC);
         this.role = role;
     }
+
+    // Getters and Setters
+    public long getUserId() {
+        return userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public ZonedDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
+    // Need to add password and integrate Spring Security
 }

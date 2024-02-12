@@ -6,10 +6,10 @@ import jakarta.persistence.*;
 @Table(name = "roles")
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int roleId;
 
-    @Column(name="RoleName")
+    @Column(name="role_name")
     private String roleName;
 
     public Role() {
