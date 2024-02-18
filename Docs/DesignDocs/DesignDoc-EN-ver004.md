@@ -55,8 +55,9 @@
     - RegistrationDate
     ~~- IsPaidMember~~
 
-- ##### ModificationRecords: Store modification records of entries
+- ##### ModificationRecords: Store modification records of entries(Do we really need this???)
     - RecordID (PK)
+    - EntryID (FK, to Entries.EntryID)
     - UserID (FK, to Users.UserID)
     - ModificationTimestamp
 
