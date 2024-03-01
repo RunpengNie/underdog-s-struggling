@@ -9,13 +9,18 @@ import java.time.ZonedDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    private long userID;
+
     @Column(name="user_name")
     private String userName;
-    @Column(name="role")
+
+    @JoinColumn(name="role")
+    @ManyToOne
     private Role role;
+
     @Column(name="email")
     public String email;
+
     @Column(name="registration_date")
     private ZonedDateTime registrationDate;
 
@@ -23,7 +28,7 @@ public class User {
     }
 
     public User(long userId, String email, String userName, Role role) {
-        this.userId = userId;
+        this.userID = userId;
         this.email = email;
         this.userName = userName;
         this.registrationDate = ZonedDateTime.now(ZoneOffset.UTC);
@@ -31,8 +36,8 @@ public class User {
     }
 
     // Getters and Setters
-    public long getUserId() {
-        return userId;
+    public long getUserID() {
+        return userID;
     }
 
     public String getUserName() {

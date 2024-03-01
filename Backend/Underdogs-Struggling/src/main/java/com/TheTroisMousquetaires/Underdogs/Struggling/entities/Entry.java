@@ -9,34 +9,34 @@ public class Entry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "entry_id")
-    private Long entryId;
+    private Long entryID;
 
     @Column(name = "title", unique = true, nullable = false)
     private String title;
 
-    @Column(name = "SubTitle")
+    @Column(name = "sub_title")
     // maybe we should call it topic or something else
-    private String topicSubtitle;
+    private String subtitle;
 
-    @Column(name = "Content")
+    @Column(name = "content")
     private String content;
 
     @ManyToOne
-    @JoinColumn(name = "AuthorID")
+    @JoinColumn(name = "author_id")
     private User author;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "CreatedDate")
+    @Column(name = "created_date")
     private Date createdDate;
 
     @ManyToMany
     @JoinTable(
-            name = "tags",
-            joinColumns = @JoinColumn(name = "EntryID"),
-            inverseJoinColumns = @JoinColumn(name = "TagID")
+            name = "entry_tags",
+            joinColumns = @JoinColumn(name = "entry_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
-    private Set<Tag> tags = new HashSet<>();
+    private Set<Tag> tags;
 
-    @Column(name = "KnowledgeLevel")
+    @Column(name = "knowledge_level")
     private int knowledgeLevel;
 }

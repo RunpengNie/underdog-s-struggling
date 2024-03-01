@@ -1,6 +1,7 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.entities;
 
 import jakarta.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "tags")
@@ -8,10 +9,13 @@ public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "tag_id")
-    private Long tagId;
+    private Long tagID;
 
     @Column(name = "tag_name", unique = true)
     private String tagName;
+
+    @ManyToMany
+    Set<Entry> entries;
 
     // Constructors
     public Tag() {
@@ -22,12 +26,12 @@ public class Tag {
     }
 
     // Getters and Setters
-    public Long getTagId() {
-        return tagId;
+    public Long getTagID() {
+        return tagID;
     }
 
-    public void setTagId(Long tagId) {
-        this.tagId = tagId;
+    public void setTagID(Long tagId) {
+        this.tagID = tagId;
     }
 
     public String getTagName() {

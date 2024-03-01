@@ -23,7 +23,7 @@ public class Application {
 			role.setRoleName("TestRole");
 
 			repository.save(role);
-			Optional<Role> saved = repository.findRoleByID(role.getRoleID());
+			Optional<Role> saved = repository.findRoleByRoleID(role.getRoleID());
 		};
     }
 }

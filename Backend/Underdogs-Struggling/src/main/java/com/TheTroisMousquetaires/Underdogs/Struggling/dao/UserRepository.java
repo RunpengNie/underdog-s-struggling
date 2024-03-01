@@ -11,13 +11,13 @@ import java.util.Optional;
 public interface UserRepository extends CrudRepository<User, Long> {
     User save(User entity);
 
-    void deleteUserById(long id);
+    void deleteUserByUserID(long id);
 
-    Optional<User> findUserById(long id);
+    Optional<User> findUserByUserID(long id);
 
-    List<User> findUsersByName(String name);
+    List<User> findUsersByUserName(String name);
 
     Optional<User> findUserByEmail(String email);
 
-    boolean existsUserById(long id);
+    boolean existsUserByUserID(long id);
 }

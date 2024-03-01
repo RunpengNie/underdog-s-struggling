@@ -11,9 +11,9 @@ import java.util.Optional;
 public interface EntryRepository extends CrudRepository<Entry, Long> {
     Entry save(Entry entity);
 
-    void deleteEntryById(long id);
+    void deleteEntryByEntryID(long id);
 
-    Optional<Entry> findEntryById(long id);
+    Optional<Entry> findEntryByEntryID(long id);
 
     Optional<Entry> findEntriesByTitle(String title);
 
@@ -27,5 +27,5 @@ public interface EntryRepository extends CrudRepository<Entry, Long> {
 
     List<Entry> findEntriesByKnowledgeLevelLessThan(int knowledgeLevel);
 
-    boolean existsEntryById(long id);
+    boolean existsEntryByEntryID(long id);
 }

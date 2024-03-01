@@ -10,12 +10,12 @@ import java.util.Optional;
 public interface TagRepository extends CrudRepository<Tag, Long>{
     Tag save(Tag entity);
 
-    void deleteTagById(long id);
+    void deleteTagByTagID(long id);
 
-    Optional<Tag> findTagById(Long aLong);
+    Optional<Tag> findTagByTagID(Long aLong);
 
-    List<Tag> findTagsByName(String name);
+    List<Tag> findTagsByTagName(String name);
 
-    boolean existsTagById(long id);
+    boolean existsTagByTagID(long id);
 
 }
