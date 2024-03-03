@@ -11,15 +11,15 @@ public interface EntryService {
 
     // Todo: get all entry
 
-    List<Entry> getEntriesByTitle(String titles);
+    Optional<Entry> getEntryByTitle(String title);
 
-    List<Entry> getEntriesByTag(Tag tag);
+    List<Entry> getEntriesByTags(Set<Tag> tags);
 
     // List<Entry> getEntriesByTitleAndKnowledgeLevel(String titles, int level);
 
     Entry addEntry(Entry e);
 
-    Entry updateEntry(Entry e, long id);
+    Entry updateEntry(Entry e);
 
     void deleteEntry(long id);
 }
