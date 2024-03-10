@@ -42,7 +42,7 @@
 - AWS S3 Bucket: Store graphical data
 
 #### (2) MySQL Database Design
-- ##### Roless: Store roles information
+- ##### Roles: Store roles information
     - RoleID (PK)
     - RoleName
 
