@@ -11,10 +11,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userID;
 
-    @Column(name="user_name")
+    @Column(name="user_name", nullable = false)
     private String userName;
 
-    @JoinColumn(name="role")
+    @JoinColumn(name="role", nullable = false, unique = true)
     @ManyToOne
     private Role role;
 
