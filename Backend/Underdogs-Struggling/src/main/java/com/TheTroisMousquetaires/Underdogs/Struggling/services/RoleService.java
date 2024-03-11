@@ -5,9 +5,9 @@ import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Role;
 import java.util.Optional;
 
 public interface RoleService {
-    Optional<Role> findRoleById(int roleId);
+    Optional<Role> findRoleByID(int roleID);
 
     Role addRole(Role role);
 
-    void deleteRole(int roleId);
+    void deleteRoleByRoleId(int roleID);
 }

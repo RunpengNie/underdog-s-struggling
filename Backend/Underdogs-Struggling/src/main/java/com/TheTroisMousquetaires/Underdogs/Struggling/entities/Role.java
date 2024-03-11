@@ -1,31 +1,36 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.entities;
 
 import jakarta.persistence.*;
+import java.util.*;
 
 @Entity
-@Table(name = "Roles")
+@Table(name = "roles")
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int roleId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
+    private int roleID;
 
-    @Column(name="RoleName")
+    @Column(name="role_name")
     private String roleName;
+
+    @OneToMany
+    private Set<User> users;
 
     public Role() {
     }
 
-    public Role(int roleId, String roleName) {
-        this.roleId = roleId;
+    public Role(int roleID, String roleName) {
+        this.roleID = roleID;
         this.roleName = roleName;
     }
 
     public int getRoleID() {
-        return roleId;
+        return roleID;
     }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
+    public void setRoleID(int roleID) {
+        this.roleID = roleID;
     }
 
     public String getRoleName() {

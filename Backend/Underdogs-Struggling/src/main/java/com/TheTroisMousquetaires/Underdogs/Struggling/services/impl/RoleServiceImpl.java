@@ -15,8 +15,8 @@ public class RoleServiceImpl implements RoleService {
     private RoleRepository roleRepository;
 
     @Override
-    public Optional<Role> findRoleById(int roleId) {
-        return roleRepository.findByRoleId(roleId);
+    public Optional<Role> findRoleByID(int roleID) {
+        return roleRepository.findRoleByRoleID(roleID);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public void deleteRole(int roleId) {
-        roleRepository.deleteRoleByRoleId(roleId);
+    public void deleteRoleByRoleId(int roleID) {
+        roleRepository.deleteRoleByRoleID(roleID);
     }
 }

@@ -23,12 +23,17 @@
 
 ## 3. Program Logic
 
-#### (1) 3 different type of users and guests
+#### (1) Basic Entity Design
+  - Role
+  - User
+  - ModificationRecord
+  - Tag
+  - Entry
+#### (2) 3 different type of users and guests
   - Administrator/Developer
   - VIP user(Paid user)
   - Registered User
   - Guest User/Unregistered User(they won't appear in our database)
-#### (2) 
 #### (3) 
 
 ## 4. Database
@@ -37,6 +42,10 @@
 - AWS S3 Bucket: Store graphical data
 
 #### (2) MySQL Database Design
+- ##### Roles: Store roles information
+    - RoleID (PK)
+    - RoleName
+
 - ##### Users: Store user information
     - UserID (PK)
     - UserName
@@ -46,23 +55,9 @@
     - RegistrationDate
     ~~- IsPaidMember~~
 
-- ##### Roless: Store roles information
-    - RoleID (PK)
-    - RoleName
-
-- ##### Entries: Store knowledge entries
-    - EntryID (PK)
-    - Title (Unique)
-    - Topic/SubTitle
-    - Order
-    - Content
-    - AuthorID (FK, to Users.UserID)
-    - CreatedDate
-    - LastModifyDate
-    - KnowledgeLevel
-
-- ##### ModificationRecords: Store modification records of entries
+- ##### ModificationRecords: Store modification records of entries(Do we really need this???)
     - RecordID (PK)
+    - EntryID (FK, to Entries.EntryID)
     - UserID (FK, to Users.UserID)
     - ModificationTimestamp
 
@@ -74,6 +69,17 @@
   - EntryTagID (PK)
   - EntryID (FK, to Entries.EntryID)
   - TagID (FK, to Tags.TagID)
+
+- ##### Entries: Store knowledge entries
+    - EntryID (PK)
+    - Title (Unique)
+    - Topic/SubTitle
+    - Order
+    - Content
+    - AuthorID (FK, to Users.UserID)
+    - CreatedDate
+    - LastModificationID (FK, to ModificationRecords.RecordID)
+    - KnowledgeLevel
 
 ##### (3) 
 ## 4. Milestones

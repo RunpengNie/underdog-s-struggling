@@ -10,11 +10,11 @@ import java.util.Optional;
 public interface RoleRepository extends CrudRepository<Role, Integer> {
     Role save(Role entity);
 
-    void deleteRoleByRoleId(int id);
+    void deleteRoleByRoleID(int id);
 
-    Optional<Role> findByRoleId(int RoleID);
+    Optional<Role> findRoleByRoleID(int RoleID);
 
-    Optional<Role> findByRoleName(String roleName);
+    Optional<Role> findRoleByRoleName(String roleName);
 
-    boolean existsById(int RoleID);
+    boolean existsRoleByRoleID(int RoleID);
 }
