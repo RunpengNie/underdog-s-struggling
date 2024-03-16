@@ -46,7 +46,7 @@
     - Implement `Entries` and related code for backend. Dealine: **Dec 16th 2023**
 
 ==============================================================================================================
-============in the next 4.5 months, people are quite busy so no meeting happend during this period============
+============in the next 3.5 months, people are quite busy so no meeting happend during this period============
 ==============================================================================================================
 
 ## March 16th 2024
