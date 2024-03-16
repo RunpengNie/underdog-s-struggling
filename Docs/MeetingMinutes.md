@@ -56,9 +56,9 @@ In the next 3.5 months, people are quite busy so no meeting happend during this 
 
 #### Action Items
 - Tony: 
-    - Implement 4 functions DocServiceController. Dealine: **March 23rd 2024**
+    - Implement 4 functions `DocServiceController`. Dealine: **March 23rd 2024**
 - Joe: 
-    - Implement 3 functions DocServiceController. Dealine: **March 23rd 2024**
+    - Implement 3 functions `DocServiceController`. Dealine: **March 23rd 2024**
     - Fix [Bug](https://github.com/RunpengNie/underdog-s-struggling/issues/26) and the tiny entity design bug. Dealine: **March 23rd 2024**
 - Jerry: 
     - Implement `AuthController` and related code for backend. Dealine: **March 23rd 2024**
