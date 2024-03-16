@@ -44,3 +44,22 @@
 - Jerry: 
     - Implement `ModificationRecords` and related code for backend. Dealine: **Dec 10th 2023**
     - Implement `Entries` and related code for backend. Dealine: **Dec 16th 2023**
+
+==============================================================================================================
+============in the next 4.5 months, people are quite busy so no meeting happend during this period============
+==============================================================================================================
+
+## March 16th 2024
+#### Major Updates & Demo
+- Jerry: 
+    - Backend Project's Persistence Layer is finished(DAOs, Entities, Services...)
+
+#### Action Items
+- Tony: 
+    - Implement 4 functions DocServiceController. Dealine: **March 23rd 2024**
+- Joe: 
+    - Implement 3 functions DocServiceController. Dealine: **March 23rd 2024**
+    - Fix [Bug](https://github.com/RunpengNie/underdog-s-struggling/issues/26) and the tiny entity design bug. Dealine: **March 23rd 2024**
+- Jerry: 
+    - Implement `AuthController` and related code for backend. Dealine: **March 23rd 2024**
+    - Generate fake data for better understanding. Dealine: **March 23rd 2024**
