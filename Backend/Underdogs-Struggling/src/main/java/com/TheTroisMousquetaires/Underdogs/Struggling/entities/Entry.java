@@ -18,6 +18,10 @@ public class Entry {
     // maybe we should call it topic or something else
     private String subtitle;
 
+    @ManyToOne
+    @JoinColumn(name = "language_id")
+    private Language language;
+
     @Column(name = "content")
     private String content;
 
