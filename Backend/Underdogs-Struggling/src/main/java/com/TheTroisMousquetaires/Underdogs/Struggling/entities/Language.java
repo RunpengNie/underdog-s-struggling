@@ -13,5 +13,8 @@ public class Language {
 
     @Column(name = "language_code", unique = true, nullable = false)
     private String languageCode;
+
+    @Column(name = "language_name")
+    private String languageName;
     
 }
