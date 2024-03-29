@@ -15,9 +15,9 @@ public interface EntryRepository extends CrudRepository<Entry, Long> {
 
     Optional<Entry> findEntryByEntryID(long id);
 
-    Optional<Entry> findEntryByTitle(String title);
+    Optional<Entry> findEntryBySubtitle(String subtitle);
 
-    List<Entry> findEntriesBySubtitle(String subtitle);
+    List<Entry> findEntriesByTitle(String title);
 
     List<Entry> findEntriesByAuthor(User author);
 
