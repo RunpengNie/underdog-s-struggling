@@ -32,13 +32,13 @@ class DocServiceController {
   public List<Entry> getEntriesBySubtitle(@PathVariable String subtitle) {
       return entryRepository.findEntriesBySubtitle(subtitle);
   }
-
-  @GetMapping("/docs/knowledge_level_less/{knowledgelevel}}")
+  
+  @GetMapping("/docs/knowledge_level_less/{knowledgelevel}")
   public List<Entry> getEntriesLessThanKnowledgeLevel(@PathVariable int knowledgelevel) {
       return entryRepository.findEntriesByKnowledgeLevelLessThan(knowledgelevel);
   }
   
-  @GetMapping("/docs/knowledge_level_greater/{knowledgelevel}}")
+  @GetMapping("/docs/knowledge_level_greater/{knowledgelevel}")
   public List<Entry> getEntriesGreaterThanKnowledgeLevel(@PathVariable int knowledgelevel) {
       return entryRepository.findEntriesByKnowledgeLevelGreaterThan(knowledgelevel);
   }
