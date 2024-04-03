@@ -6,7 +6,6 @@ import com.TheTroisMousquetaires.Underdogs.Struggling.services.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
-import java.util.Optional;
 
 public class TagServiceImpl implements TagService {
 

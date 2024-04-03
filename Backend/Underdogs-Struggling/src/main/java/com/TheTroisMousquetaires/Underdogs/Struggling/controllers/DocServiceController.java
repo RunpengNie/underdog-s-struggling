@@ -1,12 +1,16 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.controllers;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.TheTroisMousquetaires.Underdogs.Struggling.dao.EntryRepository;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Entry;
+
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 
 
 @RestController
@@ -15,12 +19,12 @@ class DocServiceController {
   private EntryRepository entryRepository;
 
   @GetMapping("/docs/{id}")
-  public Entry getEntryByID(@PathVariable Long id) {
+  public Optional<Entry> getEntryByID(@PathVariable Long id) {
       return entryRepository.findEntryByEntryID(id);
   }
   
   @GetMapping("/docs/{title}")
-  public Entry getEntryByTitle(@PathVariable String title) {
+  public Optional<Entry> getEntryByTitle(@PathVariable String title) {
       return entryRepository.findEntryByTitle(title);
   }
   
