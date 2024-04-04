@@ -29,6 +29,7 @@
   - ModificationRecord
   - Tag
   - Entry
+  - Language
 #### (2) 3 different type of users and guests
   - Administrator/Developer
   - VIP user(Paid user)
@@ -72,14 +73,20 @@
 
 - ##### Entries: Store knowledge entries
     - EntryID (PK)
-    - Title (Unique)
+    - Title
     - Topic/SubTitle
     - Order
     - Content
     - AuthorID (FK, to Users.UserID)
+    - LanguageID (FK, to Languages.LanguageID)
     - CreatedDate
     - LastModificationID (FK, to ModificationRecords.RecordID)
     - KnowledgeLevel
+
+- ##### Languages:
+    - LanguageID(PK)
+    - LanguageCode
+    - LanguageName
 
 ##### (3) 
 ## 4. Milestones
