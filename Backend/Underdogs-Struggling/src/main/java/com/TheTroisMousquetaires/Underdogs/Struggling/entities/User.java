@@ -14,12 +14,15 @@ public class User {
     @Column(name="user_name", nullable = false)
     private String userName;
 
+    @Column(name="password", nullable = false)
+    private String password;
+
     @JoinColumn(name="role", nullable = false, unique = true)
     @ManyToOne
     private Role role;
 
     @Column(name="email")
-    public String email;
+    private String email;
 
     @Column(name="registration_date")
     private ZonedDateTime registrationDate;
@@ -48,6 +51,14 @@ public class User {
         this.userName = userName;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Role getRole() {
         return role;
     }
@@ -67,6 +78,4 @@ public class User {
     public ZonedDateTime getRegistrationDate() {
         return registrationDate;
     }
-
-    // Need to add password and integrate Spring Security
 }
