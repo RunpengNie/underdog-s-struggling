@@ -1,7 +1,7 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling;
 
 import com.TheTroisMousquetaires.Underdogs.Struggling.dao.RoleRepository;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Role;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Role;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

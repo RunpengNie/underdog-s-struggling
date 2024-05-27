@@ -1,7 +1,6 @@
-package com.TheTroisMousquetaires.Underdogs.Struggling.entities;
+package com.TheTroisMousquetaires.Underdogs.Struggling.entity;
 
 import jakarta.persistence.*;
-import java.util.*;
 
 @Entity
 @Table(name = "languages")

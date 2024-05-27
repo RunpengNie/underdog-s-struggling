@@ -1,6 +1,6 @@
-package com.TheTroisMousquetaires.Underdogs.Struggling.services;
+package com.TheTroisMousquetaires.Underdogs.Struggling.service;
 
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.User;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.User;
 
 import java.util.Optional;
 import java.util.*;

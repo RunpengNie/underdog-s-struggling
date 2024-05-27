@@ -1,8 +1,8 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.security;
 
 import com.TheTroisMousquetaires.Underdogs.Struggling.dao.UserRepository;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Role;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.User;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Role;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
