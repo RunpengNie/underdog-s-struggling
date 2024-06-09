@@ -6,18 +6,25 @@ import com.TheTroisMousquetaires.Underdogs.Struggling.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
-public class CustomUserDetailsService{
+public class CustomUserDetailsService implements UserDetailsService {
 
     private UserRepository userRepository;
 
     public CustomUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    // UserDetailsService require this, not really useful for our program logic
+    public UserDetails loadUserByUsername(String username){
+        List<UserDetails> users = loadUsersByUsername(username);
+        return users.isEmpty() ? null : users.get(0);
     }
 
     public List<UserDetails> loadUsersByUsername(String username) throws UsernameNotFoundException {
