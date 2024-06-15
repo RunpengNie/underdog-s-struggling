@@ -22,4 +22,8 @@ public interface EntryService {
     Entry updateEntry(Entry e);
 
     void deleteEntry(long id);
+
+    List<Entry> getAllEntries();
+
+    List<Entry> getEntriesByTopic(String topic);
 }
