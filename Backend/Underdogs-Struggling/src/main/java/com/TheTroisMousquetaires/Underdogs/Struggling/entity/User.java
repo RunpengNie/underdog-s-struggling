@@ -9,6 +9,7 @@ import java.time.ZonedDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private long userID;
 
     @Column(name="user_name", nullable = false)
@@ -17,8 +18,12 @@ public class User {
     @Column(name="password", nullable = false)
     private String password;
 
-    @JoinColumn(name="role", nullable = false, unique = true)
     @ManyToOne
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
     private Role role;
 
     @Column(name="email")
