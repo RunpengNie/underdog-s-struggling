@@ -17,9 +17,9 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter{
     private JwtTokenProvider jwtTokenProvider;
 
-    private UserDetailsService userDetailsService;
+    private CustomUserDetailsService userDetailsService;
 
-    public JwtAuthenticationFilter(JwtTokenProvider jwtTokenProvider, UserDetailsService userDetailsService) {
+    public JwtAuthenticationFilter(JwtTokenProvider jwtTokenProvider, CustomUserDetailsService userDetailsService) {
         this.jwtTokenProvider = jwtTokenProvider;
         this.userDetailsService = userDetailsService;
     }
@@ -34,10 +34,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 
         if(StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)){
 
-            String username = jwtTokenProvider.getUsername(token);
+            String userEmail = jwtTokenProvider.getUserEmail(token);
 
             // Load the users associated with the command token
-            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+            UserDetails userDetails = userDetailsService.loadUserByEmail(userEmail);
 
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                     userDetails,

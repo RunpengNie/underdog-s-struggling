@@ -1,4 +1,5 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.security;
+
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 import java.security.Key;
 import java.util.Date;
 
+@Component
 public class JwtTokenProvider {
     private static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
 
@@ -44,15 +46,16 @@ public class JwtTokenProvider {
         );
     }
 
-    // Get username from Jwt token
-    public String getUsername(String token){
+    // Get user email from Jwt token
+    public String getUserEmail(String token){
         Claims claims = Jwts.parserBuilder()
                 .setSigningKey(key())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
-        String username = claims.getSubject();
-        return username;
+        String userEmail = claims.getSubject();
+        System.out.println(userEmail);
+        return userEmail;
     }
 
     // Validate Jwt token
