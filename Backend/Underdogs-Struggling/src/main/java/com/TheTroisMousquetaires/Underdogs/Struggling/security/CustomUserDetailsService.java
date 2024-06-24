@@ -22,9 +22,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     // UserDetailsService require this, not really useful for our program logic
-    public UserDetails loadUserByUsername(String username){
-        List<UserDetails> users = loadUsersByUsername(username);
-        return users.isEmpty() ? null : users.get(0);
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
+        UserDetails user = loadUserByEmail(username);
+        return user;
     }
 
     public List<UserDetails> loadUsersByUsername(String username) throws UsernameNotFoundException {

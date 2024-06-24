@@ -15,15 +15,15 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
-	CommandLineRunner runner(RoleRepository repository) {
-		return args -> {
-
-			Role role = new Role();
-			role.setRoleName("TestRole");
-
-			repository.save(role);
-			Optional<Role> saved = repository.findRoleByRoleID(role.getRoleID());
-		};
-    }
+//	@Bean
+//	CommandLineRunner runner(RoleRepository repository) {
+//		return args -> {
+//
+//			Role role = new Role();
+//			role.setRoleName("TestRole");
+//
+//			repository.save(role);
+//			Optional<Role> saved = repository.findRoleByRoleID(role.getRoleID());
+//		};
+//    }
 }

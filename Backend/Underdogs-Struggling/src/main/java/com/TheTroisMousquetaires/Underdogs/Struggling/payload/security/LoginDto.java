@@ -8,7 +8,7 @@ public class LoginDto {
     }
 
     public LoginDto(String accountOrEmail, String password) {
-        this.email = email;
+        this.email = accountOrEmail;
         this.password = password;
     }
 

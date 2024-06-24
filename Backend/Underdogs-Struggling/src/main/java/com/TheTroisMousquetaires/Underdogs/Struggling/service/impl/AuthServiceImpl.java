@@ -32,8 +32,11 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public String login(LoginDto loginDto) {
 
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                loginDto.getEmail(), loginDto.getPassword()));
+        var token = new UsernamePasswordAuthenticationToken(loginDto.getEmail(), loginDto.getPassword());
+
+        Authentication authentication = authenticationManager.authenticate(token);
+
+        System.out.println("success!!!!");
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
