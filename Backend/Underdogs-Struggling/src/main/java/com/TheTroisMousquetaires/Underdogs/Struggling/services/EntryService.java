@@ -13,7 +13,7 @@ public interface EntryService {
 
     Optional<Entry> getEntryByTitle(String title);
 
-    List<Entry> getEntriesByTags(Set<Tag> tags);
+    List<Entry> findEntriesByTags(Set<Tag> tags);
 
     // List<Entry> getEntriesByTitleAndKnowledgeLevel(String titles, int level);
 
@@ -25,5 +25,5 @@ public interface EntryService {
 
     List<Entry> getAllEntries();
 
-    List<Entry> getEntriesByTopic(String topic);
+    List<Entry> findEntriesByTopic(String topic);
 }

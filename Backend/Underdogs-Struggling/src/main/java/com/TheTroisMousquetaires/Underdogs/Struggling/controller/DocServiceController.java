@@ -10,10 +10,12 @@ import java.util.Set;
 
 import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Entry;
 import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Tag;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class DocServiceController{
-    @Autowired
+//    @Autowired
     private EntryService entryService;
     private TagService tagService;
 
@@ -24,11 +26,12 @@ public class DocServiceController{
 
     @GetMapping("/{topic}")
     public List<Entry> getEntriesByTopic(String topic){
-        return entryService.getEntriesByTopic(topic);
+        return entryService.findEntriesByTopic(topic);
     }
 
     @GetMapping("/{tags}")
-    public List<Entry> getEntriesByTags(Set <Tag> tags){
-        return entryService.getEntriesByTags(tags);
+    public List<Entry> getEntriesByTags(@RequestParam Set<Tag> tags){
+        return entryService.findEntriesByTags(tags);
     }
+
 }

@@ -4,10 +4,11 @@ import com.TheTroisMousquetaires.Underdogs.Struggling.dao.TagRepository;
 import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Tag;
 import com.TheTroisMousquetaires.Underdogs.Struggling.services.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.Optional;
-
+@Service
 public class TagServiceImpl implements TagService {
 
     @Autowired
