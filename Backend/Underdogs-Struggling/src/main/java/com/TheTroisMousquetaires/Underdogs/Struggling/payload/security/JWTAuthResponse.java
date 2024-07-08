@@ -3,7 +3,7 @@ package com.TheTroisMousquetaires.Underdogs.Struggling.payload.security;
 public class JWTAuthResponse {
 
     private String accessToken;
-    private String tokenType;
+    private String tokenType = "Bearer";
 
     public JWTAuthResponse(String accessToken) {
         this.accessToken = accessToken;
@@ -19,9 +19,5 @@ public class JWTAuthResponse {
 
     public String getTokenType() {
         return tokenType;
-    }
-
-    public void setTokenType(String tokenType) {
-        this.tokenType = tokenType;
     }
 }
