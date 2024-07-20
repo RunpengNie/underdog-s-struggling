@@ -17,4 +17,5 @@ public interface TagRepository extends CrudRepository<Tag, Long>{
 
     boolean existsTagByTagID(long id);
 
+    Optional<Tag> findTagByTagName(String tagName);
 }

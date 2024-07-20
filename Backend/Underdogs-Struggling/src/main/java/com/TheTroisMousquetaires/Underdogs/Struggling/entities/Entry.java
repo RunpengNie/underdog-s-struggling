@@ -41,12 +41,13 @@ public class Entry {
     )
 
     private Set<Tag> tags;
+//    private Set<Tag> tags = new HashSet<>();
 
     @Column(name = "knowledge_level")
     private int knowledgeLevel;
 
-    public Entry(long entryID, String topic, Language language, String content, User author, Date createdDate){
-//        this.title = title;
+    public Entry(long entryID, String title, String topic, Language language, String content, User author, Date createdDate){
+        this.title = title;
         this.topic = topic;
         this.language = language;
         this.content = content;
@@ -74,4 +75,7 @@ public class Entry {
         this.tags = tags;
     }
 
+    public Iterable<Object> getTags() {
+        return Collections.singleton(tags);
+    }
 }

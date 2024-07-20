@@ -14,8 +14,8 @@ public class Tag {
     @Column(name = "tag_name", unique = true)
     private String tagName;
 
-    @ManyToMany
-    List<Entry> entries;
+    @ManyToMany(mappedBy = "tags")
+    private List<Entry> entries;
 
     // Constructors
     public Tag() {

@@ -25,14 +25,15 @@ public interface EntryRepository extends CrudRepository<Entry, Long> {
 
     List<Entry> findEntriesByAuthor(User author);
 
-    @Query("Select e FROM Entry e JOIN e.tags t WHERE t IN :tags")
-//    List<Entry> findEntriesByTags(Set<Tag> tags);
-    List<Entry> findEntriesByTags(@Param("tags") Collection<Tag> tags);
+    @Query("SELECT e FROM Entry e JOIN e.tags t WHERE t IN :tags GROUP BY e HAVING COUNT(DISTINCT t) = :tagCount")
+    List<Entry> findEntriesByTags(@Param("tags") Set<Tag> tags, @Param("tagCount") long tagCount);
 
     List<Entry> findEntriesByKnowledgeLevelGreaterThan(int knowledgeLevel);
 
     List<Entry> findEntriesByKnowledgeLevelLessThan(int knowledgeLevel);
 
     boolean existsEntryByEntryID(long id);
+
+    boolean existsEntryByTitle(String title);
 
 }

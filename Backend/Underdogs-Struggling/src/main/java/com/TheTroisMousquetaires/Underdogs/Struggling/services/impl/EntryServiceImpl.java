@@ -1,7 +1,6 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.services.impl;
 
 import com.TheTroisMousquetaires.Underdogs.Struggling.dao.EntryRepository;
-import com.TheTroisMousquetaires.Underdogs.Struggling.dao.TagRepository;
 import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Entry;
 import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Tag;
 import com.TheTroisMousquetaires.Underdogs.Struggling.services.EntryService;
@@ -31,10 +30,6 @@ public class EntryServiceImpl implements EntryService {
 
     @Override
     public Entry addEntry(Entry e){
-//        Set<Tag> managedTags = new HashSet<>();
-//        for (Tag tag : e.getTags()){
-//            Tag managedTag = tagService.findTagByName(tag.getName()).orElseGet(() -> tagService.addTag(tag));
-//        }
         return entryRepository.save(e);
     }
 
@@ -59,8 +54,8 @@ public class EntryServiceImpl implements EntryService {
     }
 
     @Override
-    public List<Entry> findEntriesByTags(Set<Tag> tags){
-        return entryRepository.findEntriesByTags(tags);
+    public List<Entry> findEntriesByTags(Set<Tag> tags, long tagCount){
+        return entryRepository.findEntriesByTags(tags, tagCount);
     }
 
 }

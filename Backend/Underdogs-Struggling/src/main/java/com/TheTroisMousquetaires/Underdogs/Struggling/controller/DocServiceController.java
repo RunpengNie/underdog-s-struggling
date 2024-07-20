@@ -30,8 +30,8 @@ public class DocServiceController{
     }
 
     @GetMapping("/{tags}")
-    public List<Entry> getEntriesByTags(@RequestParam Set<Tag> tags){
-        return entryService.findEntriesByTags(tags);
+    public List<Entry> getEntriesByTags(@RequestParam Set<Tag> tags, long tagCount){
+        return entryService.findEntriesByTags(tags, tagCount);
     }
 
 }

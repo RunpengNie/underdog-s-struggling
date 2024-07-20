@@ -44,86 +44,72 @@ public class Application {
 			Optional<Role> saved = roleRepository.findRoleByRoleID(role.getRoleID());
 
 
-			Optional<Tag> optionaltag1 = tagRepository.findTagByTagID((long)1);
-			Optional<Tag> optionaltag2 = tagRepository.findTagByTagID((long)2);
+			Tag tag1 = tagRepository.findTagByTagName("TestTag1").orElseGet(() -> {
+				Tag newTag = new Tag("TestTag1");
+				return tagRepository.save(newTag);
+			});
 
-			Tag tag1 = optionaltag1.get();
-			Tag tag2 = optionaltag2.get();
+			Tag tag2 = tagRepository.findTagByTagName("TestTag2").orElseGet(() -> {
+				Tag newTag = new Tag("TestTag2");
+				return tagRepository.save(newTag);
+			});
 
-//			Tag tag1 = new Tag();
-//			tag1.setTagName("TestTag1");
-//
-//			Tag tag2 = new Tag();
-//			tag2.setTagName("TestTag2");
-
-//			boolean tag1Exists = tagRepository.existsById((long)2);
-//			System.out.println("Tag1 exists in DB " + tag1Exists);
-//			boolean tag2Exists = tagRepository.existsById((long)1);
-//			System.out.println("Tag2 exists in DB " + tag2Exists);
-
-//			tagRepository.save(tag1);
-//			tagRepository.save(tag2);
-
-//			List<Tag> existingTag1 = tagRepository.findTagsByTagName("TestTag1");
-//			if (!existingTag1.isEmpty()) {
-//				tagRepository.save(tag1);
-//			}
-//
-//			List<Tag> existingTag2 = tagRepository.findTagsByTagName("TestTag2");
-//			if (!existingTag2.isEmpty()) {
-//				tagRepository.save(tag2);
-//			}
-
-
-			Entry entry1 = new Entry();
-			entry1.setTitle("TestEntry1");
-
-			Set<Tag> entry1Tags = new HashSet<>();
-			entry1Tags.add(tag1);
-
-			entry1.setTags(entry1Tags);
-
-			Entry entry2 = new Entry();
-			entry2.setTitle("TestEntry2");
-
-
-			Set<Tag> entry2Tags = new HashSet<Tag>();
-			entry2Tags.add(tag1);
-			entry2Tags.add(tag2);
-			entry2.setTags(entry2Tags);
-
+//			Entry entry1 = new Entry();
+//			entry1.setTitle("TestEntry1");
+//			entry1.setTags(Set.of(tag1));
 //			entryRepository.save(entry1);
+//
+//			Entry entry2 = new Entry();
+//			entry2.setTitle("TestEntry2");
+//			entry2.setTags(Set.of(tag1, tag2));
 //			entryRepository.save(entry2);
 
-//			Optional<Entry> existingEntry1 = entryRepository.findEntryByTitle("TestEntry1");
-//			if (existingEntry1.isPresent()) {
-//				entryRepository.save(entry1);
-//			}
-//
-//			Optional<Entry> existingEntry2 = entryRepository.findEntryByTitle("TestEntry2");
-//			if (existingEntry2.isPresent()) {
-//				entryRepository.save(entry2);
-//			}
+//			// Print entries and tags for debugging
+//			System.out.println("Entries:");
+//			entryRepository.findAll().forEach(entry -> {
+//				System.out.println("Entry: " + entry.getTitle());
+//				System.out.println("Tags:");
+//				entry.getTags().forEach(tag -> System.out.println("Tag: " + tag.getTagName()));
+//			});
 
-//			entryRepository.save(entry1);
-//			entryRepository.save(entry2);
-
-//			works
-//			List<Entry> allEntries = entryService.getAllEntries();
-//			for (Entry entry : allEntries) {
-//				System.out.println("entry: " + entry.getTitle());
-//			}
-
-			List<Entry> entryByTag1 = entryService.findEntriesByTags(entry1Tags);
-			for (Entry entry : entryByTag1) {
-				System.out.println("Entries by Tag 1: " + entry.getTitle());
+			if (!entryRepository.existsById(1L)) {
+				Entry entry1 = new Entry();
+				entry1.setTitle("TestEntry1");
+				entry1.setTags(Set.of(tag1));
+				entryRepository.save(entry1);
 			}
 
-
-			List<Entry> entryByTag2 = entryService.findEntriesByTags(entry2Tags);
-			for (Entry entry : entryByTag2) {
-				System.out.println("Entries by Tag 2: " + entry.getTitle());
+			if (!entryRepository.existsById(2L)) {
+				Entry entry2 = new Entry();
+				entry2.setTitle("TestEntry2");
+				entry2.setTags(Set.of(tag1, tag2));
+				entryRepository.save(entry2);
 			}
+
+			Set<Tag> entry1Tags = Set.of(tag1);
+			List<Entry> entriesByTag1 = entryRepository.findEntriesByTags(entry1Tags, entry1Tags.size());
+
+//			works	displayByTag
+			System.out.println("Entries by Tag 1:");
+			for (Entry entry : entriesByTag1) {
+				System.out.println(entry.getTitle());
+			}
+
+			Set<Tag> entry2Tags = Set.of(tag1, tag2);
+			List<Entry> entriesByTag2 = entryRepository.findEntriesByTags(entry2Tags, entry2Tags.size());
+
+//			works  displayByTag
+			System.out.println("Entries by Tag 2:");
+			for (Entry entry : entriesByTag2) {
+				System.out.println(entry.getTitle());
+			}
+
+//			works display All Entries
+			List<Entry> allEntries = entryService.getAllEntries();
+			for (Entry entry : allEntries) {
+				System.out.println("entry: " + entry.getTitle());
+			}
+
 		};
     }
 
