@@ -54,28 +54,11 @@ public class Application {
 				return tagRepository.save(newTag);
 			});
 
-//			Entry entry1 = new Entry();
-//			entry1.setTitle("TestEntry1");
-//			entry1.setTags(Set.of(tag1));
-//			entryRepository.save(entry1);
-//
-//			Entry entry2 = new Entry();
-//			entry2.setTitle("TestEntry2");
-//			entry2.setTags(Set.of(tag1, tag2));
-//			entryRepository.save(entry2);
-
-//			// Print entries and tags for debugging
-//			System.out.println("Entries:");
-//			entryRepository.findAll().forEach(entry -> {
-//				System.out.println("Entry: " + entry.getTitle());
-//				System.out.println("Tags:");
-//				entry.getTags().forEach(tag -> System.out.println("Tag: " + tag.getTagName()));
-//			});
-
 			if (!entryRepository.existsById(1L)) {
 				Entry entry1 = new Entry();
 				entry1.setTitle("TestEntry1");
 				entry1.setTags(Set.of(tag1));
+				entry1.setTopic("TestTopic1");
 				entryRepository.save(entry1);
 			}
 
@@ -83,12 +66,12 @@ public class Application {
 				Entry entry2 = new Entry();
 				entry2.setTitle("TestEntry2");
 				entry2.setTags(Set.of(tag1, tag2));
+				entry2.setTopic("TestTopic2");
 				entryRepository.save(entry2);
 			}
 
 			Set<Tag> entry1Tags = Set.of(tag1);
 			List<Entry> entriesByTag1 = entryRepository.findEntriesByTags(entry1Tags, entry1Tags.size());
-
 //			works	displayByTag
 			System.out.println("Entries by Tag 1:");
 			for (Entry entry : entriesByTag1) {
@@ -97,7 +80,6 @@ public class Application {
 
 			Set<Tag> entry2Tags = Set.of(tag1, tag2);
 			List<Entry> entriesByTag2 = entryRepository.findEntriesByTags(entry2Tags, entry2Tags.size());
-
 //			works  displayByTag
 			System.out.println("Entries by Tag 2:");
 			for (Entry entry : entriesByTag2) {
@@ -109,6 +91,22 @@ public class Application {
 			for (Entry entry : allEntries) {
 				System.out.println("entry: " + entry.getTitle());
 			}
+
+//			works display entries by topic1
+			List<Entry> entriesByTopic1 = entryRepository.findEntriesByTopic("TestTopic1");
+			System.out.println("Entries by Topic 1:");
+			for (Entry entry : entriesByTopic1) {
+				System.out.println(entry.getTitle());
+			}
+
+//			works display entries by topic2
+			List<Entry> entriesByTopic2 = entryRepository.findEntriesByTopic("TestTopic2");
+			System.out.println("Entries by Topic 2:");
+			for (Entry entry : entriesByTopic2) {
+				System.out.println(entry.getTitle());
+			}
+
+
 
 		};
     }

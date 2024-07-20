@@ -63,6 +63,10 @@ public class Entry {
         return entryID;
     }
 
+    public void setTopic(String topic){
+        this.topic = topic;
+    }
+
     public void setTitle(String title){
         this.title = title;
     }
