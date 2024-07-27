@@ -1,8 +1,8 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.dao;
 
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Entry;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.User;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Tag;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Entry;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.User;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Tag;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

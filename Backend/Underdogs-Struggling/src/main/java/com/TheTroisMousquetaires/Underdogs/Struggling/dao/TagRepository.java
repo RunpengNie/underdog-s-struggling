@@ -1,6 +1,6 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.dao;
 
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Tag;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Tag;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.*;

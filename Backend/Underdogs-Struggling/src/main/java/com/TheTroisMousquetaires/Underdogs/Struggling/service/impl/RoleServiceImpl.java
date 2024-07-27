@@ -1,8 +1,8 @@
-package com.TheTroisMousquetaires.Underdogs.Struggling.services.impl;
+package com.TheTroisMousquetaires.Underdogs.Struggling.service.impl;
 
 import com.TheTroisMousquetaires.Underdogs.Struggling.dao.RoleRepository;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Role;
-import com.TheTroisMousquetaires.Underdogs.Struggling.services.RoleService;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Role;
+import com.TheTroisMousquetaires.Underdogs.Struggling.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
