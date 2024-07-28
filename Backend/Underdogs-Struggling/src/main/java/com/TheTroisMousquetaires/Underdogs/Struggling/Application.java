@@ -4,11 +4,11 @@ import com.TheTroisMousquetaires.Underdogs.Struggling.controller.DocServiceContr
 import com.TheTroisMousquetaires.Underdogs.Struggling.dao.EntryRepository;
 import com.TheTroisMousquetaires.Underdogs.Struggling.dao.RoleRepository;
 import com.TheTroisMousquetaires.Underdogs.Struggling.dao.TagRepository;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Role;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Tag;
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Entry;
-import com.TheTroisMousquetaires.Underdogs.Struggling.services.EntryService;
-import com.TheTroisMousquetaires.Underdogs.Struggling.services.TagService;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Role;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Tag;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Entry;
+import com.TheTroisMousquetaires.Underdogs.Struggling.service.EntryService;
+import com.TheTroisMousquetaires.Underdogs.Struggling.service.TagService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,15 +18,14 @@ import org.springframework.context.annotation.Bean;
 import java.util.Optional;
 import java.util.*;
 
+
 @SpringBootApplication
 public class Application {
 
 	private final EntryService entryService;
-//	private final TagService tagService;
 
     public Application(EntryService entryService) {
         this.entryService = entryService;
-//        this.tagService = tagService;
     }
 
     public static void main(String[] args) {
@@ -86,12 +85,6 @@ public class Application {
 				System.out.println(entry.getTitle());
 			}
 
-//			works display All Entries
-			List<Entry> allEntries = entryService.getAllEntries();
-			for (Entry entry : allEntries) {
-				System.out.println("entry: " + entry.getTitle());
-			}
-
 //			works display entries by topic1
 			List<Entry> entriesByTopic1 = entryRepository.findEntriesByTopic("TestTopic1");
 			System.out.println("Entries by Topic 1:");
@@ -107,6 +100,16 @@ public class Application {
 			}
 
 
+//			Optional<Entry> entryByTitle1 = entryRepository.findEntryByTitle("TestEntry1");
+//			System.out.println("Entries by Title 1:" + entryByTitle1);
+
+			//			works display All Entries
+			List<Entry> allEntries = entryService.getAllEntries();
+			System.out.println("All entries: "  + allEntries.size());
+
+			for (Entry entry : allEntries) {
+				System.out.println("entry: " + entry.getTitle());
+			}
 
 		};
     }

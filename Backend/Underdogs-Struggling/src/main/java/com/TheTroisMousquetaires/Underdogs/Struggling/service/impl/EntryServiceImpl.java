@@ -22,15 +22,14 @@ public class EntryServiceImpl implements EntryService {
     }
 
     @Override
-    public Optional<Entry> getEntryByTitle(String title){
+    public Optional<Entry> findEntryByTitle(String title){
         return entryRepository.findEntryByTitle(title);
     }
 
     @Override
-    public List<Entry> getEntriesByTags(Set<Tag> tags){
-        return entryRepository.findEntriesByTagsIn(tags);
+    public List<Entry> findEntriesByTags(Set<Tag> tags, long tagCount){
+        return entryRepository.findEntriesByTags(tags, tagCount);
     }
-
     @Override
     public Entry addEntry(Entry e){
         return entryRepository.save(e);
@@ -44,6 +43,16 @@ public class EntryServiceImpl implements EntryService {
     @Override
     public void deleteEntry(long id){
         entryRepository.deleteEntryByEntryID(id);
+    }
+
+    @Override
+    public List<Entry> getAllEntries() {
+        return List.of();
+    }
+
+    @Override
+    public List<Entry> findEntriesByTopic(String topic) {
+        return List.of();
     }
 
 }

@@ -36,4 +36,5 @@ public interface EntryRepository extends CrudRepository<Entry, Long> {
 
     boolean existsEntryByTitle(String title);
 
+    Optional<Entry> getEntryByTitle(String title);
 }
