@@ -1,4 +1,4 @@
-package com.TheTroisMousquetaires.Underdogs.Struggling.entities;
+package com.TheTroisMousquetaires.Underdogs.Struggling.entity;
 
 import jakarta.persistence.*;
 import java.time.ZoneOffset;
@@ -9,17 +9,21 @@ import java.time.ZonedDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private long userID;
 
     @Column(name="user_name", nullable = false)
     private String userName;
 
-    @JoinColumn(name="role", nullable = false, unique = true)
-    @ManyToOne
+    @Column(name="password", nullable = false)
+    private String password;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
     @Column(name="email")
-    public String email;
+    private String email;
 
     @Column(name="registration_date")
     private ZonedDateTime registrationDate;
@@ -48,6 +52,14 @@ public class User {
         this.userName = userName;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Role getRole() {
         return role;
     }
@@ -67,6 +79,4 @@ public class User {
     public ZonedDateTime getRegistrationDate() {
         return registrationDate;
     }
-
-    // Need to add password and integrate Spring Security
 }

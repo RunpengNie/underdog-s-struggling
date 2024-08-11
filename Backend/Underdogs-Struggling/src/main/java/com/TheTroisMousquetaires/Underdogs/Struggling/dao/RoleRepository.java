@@ -1,6 +1,6 @@
 package com.TheTroisMousquetaires.Underdogs.Struggling.dao;
 
-import com.TheTroisMousquetaires.Underdogs.Struggling.entities.Role;
+import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Role;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

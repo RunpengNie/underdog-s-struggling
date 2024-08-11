@@ -1,4 +1,4 @@
-package com.TheTroisMousquetaires.Underdogs.Struggling.entities;
+package com.TheTroisMousquetaires.Underdogs.Struggling.entity;
 
 import jakarta.persistence.*;
 import java.util.*;
@@ -17,6 +17,10 @@ public class Entry {
     @Column(name = "sub_title")
     // maybe we should call it topic or something else
     private String subtitle;
+
+    @ManyToOne
+    @JoinColumn(name = "language_id")
+    private Language language;
 
     @Column(name = "content")
     private String content;
