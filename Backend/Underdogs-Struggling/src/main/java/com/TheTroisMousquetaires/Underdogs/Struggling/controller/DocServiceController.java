@@ -10,9 +10,10 @@ import java.util.Set;
 
 import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Entry;
 import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Tag;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller
+
 public class DocServiceController{
 //    @Autowired
     private EntryService entryService;
@@ -29,8 +30,8 @@ public class DocServiceController{
     }
 
     @GetMapping("/{tags}")
-    public List<Entry> getEntriesByTags(@RequestParam Set<Tag> tags, long tagCount){
-        return entryService.findEntriesByTags(tags, tagCount);
+    public List<Entry> getEntriesByTags(@RequestParam Set<Tag> tags){
+        return entryService.findEntriesByTags(tags);
     }
 
     @GetMapping("/{title}")

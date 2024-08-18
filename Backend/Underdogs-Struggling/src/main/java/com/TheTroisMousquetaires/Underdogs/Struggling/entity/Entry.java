@@ -79,7 +79,7 @@ public class Entry {
         this.tags = tags;
     }
 
-    public Iterable<Object> getTags() {
-        return Collections.singleton(tags);
+    public Set<Tag> getTags() {
+        return this.tags;
     }
 }

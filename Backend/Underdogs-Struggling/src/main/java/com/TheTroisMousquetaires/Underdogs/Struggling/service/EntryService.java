@@ -21,7 +21,5 @@ public interface EntryService {
 
     List<Entry> findEntriesByTopic(String topic);
 
-    List<Entry> findEntriesByTags(Set<Tag> tags, long tagCount);
-
-
+    List<Entry> findEntriesByTags(Set<Tag> tags);
 }

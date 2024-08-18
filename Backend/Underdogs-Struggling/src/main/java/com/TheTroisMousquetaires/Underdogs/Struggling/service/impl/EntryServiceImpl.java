@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class EntryServiceImpl implements EntryService {
@@ -27,9 +28,18 @@ public class EntryServiceImpl implements EntryService {
     }
 
     @Override
-    public List<Entry> findEntriesByTags(Set<Tag> tags, long tagCount){
-        return entryRepository.findEntriesByTags(tags, tagCount);
+    public List<Entry> findEntriesByTags(Set<Tag> tags){
+//        return entryRepository.findEntriesByTags(tags);
+        // Convert Set<Tag> to List<Long> for tag IDs
+        Set<Long> tagIds = tags.stream()
+                .map(Tag::getTagID)
+                .collect(Collectors.toSet());
+
+        // Call the repository method
+        return entryRepository.findEntriesByTags(tagIds);
     }
+
+
     @Override
     public Entry addEntry(Entry e){
         return entryRepository.save(e);
@@ -47,12 +57,13 @@ public class EntryServiceImpl implements EntryService {
 
     @Override
     public List<Entry> getAllEntries() {
-        return List.of();
+        return entryRepository.findAll();
     }
 
     @Override
     public List<Entry> findEntriesByTopic(String topic) {
-        return List.of();
+
+        return entryRepository.findEntriesByTopic(topic);
     }
 
 }
