@@ -33,12 +33,6 @@ public interface EntryRepository extends CrudRepository<Entry, Long> {
 
     Optional<Entry> findEntriesByAuthor(User author);
 
-//    @Query("SELECT e FROM Entry e JOIN e.tags t WHERE t IN :tags GROUP BY e HAVING COUNT(DISTINCT t) = :tagCount")
-
-//    List<Entry> findEntriesByTags(Set<Tag> tags);
-
-
-
     Optional<Entry> findEntriesByKnowledgeLevelGreaterThan(int knowledgeLevel);
 
     Optional<Entry> findEntriesByKnowledgeLevelLessThan(int knowledgeLevel);

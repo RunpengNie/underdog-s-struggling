@@ -29,16 +29,11 @@ public class EntryServiceImpl implements EntryService {
 
     @Override
     public List<Entry> findEntriesByTags(Set<Tag> tags){
-//        return entryRepository.findEntriesByTags(tags);
-        // Convert Set<Tag> to List<Long> for tag IDs
         Set<Long> tagIds = tags.stream()
                 .map(Tag::getTagID)
                 .collect(Collectors.toSet());
-
-        // Call the repository method
         return entryRepository.findEntriesByTags(tagIds);
     }
-
 
     @Override
     public Entry addEntry(Entry e){
@@ -62,7 +57,6 @@ public class EntryServiceImpl implements EntryService {
 
     @Override
     public List<Entry> findEntriesByTopic(String topic) {
-
         return entryRepository.findEntriesByTopic(topic);
     }
 

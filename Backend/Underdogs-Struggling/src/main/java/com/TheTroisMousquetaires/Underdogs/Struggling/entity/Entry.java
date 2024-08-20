@@ -41,7 +41,6 @@ public class Entry {
     )
 
     private Set<Tag> tags;
-//    private Set<Tag> tags = new HashSet<>();
 
     @Column(name = "knowledge_level")
     private int knowledgeLevel;

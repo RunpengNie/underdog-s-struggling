@@ -15,7 +15,7 @@ public class Tag {
     private String tagName;
 
     @ManyToMany
-    Set <Entry> entries;
+    Set<Entry> entries;
 
     // Constructors
     public Tag() {
