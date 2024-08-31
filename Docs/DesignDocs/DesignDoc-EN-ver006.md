@@ -4,7 +4,6 @@
 
 #### (1) Frontend
 - Framework: React-next.js
-- UI: Similar to LiaoXuefeng
 
 #### (2) Backend
 - Coding Language: Java
@@ -23,18 +22,39 @@
 
 ## 3. Program Logic
 
+### 3.1. Backend Design
+
 #### (1) Basic Entity Design
   - Role
   - User
   - ModificationRecord
   - Tag
   - Entry
+  - Language
 #### (2) 3 different type of users and guests
   - Administrator/Developer
   - VIP user(Paid user)
   - Registered User
   - Guest User/Unregistered User(they won't appear in our database)
 #### (3) 
+
+### 3.2. Frontend Design
+
+#### 3.2.1. Page Design
+
+#### (1) Display Page 
+  - Page should contain a filter on the left side and a display area for entries
+  - URL: /#
+  - filter description: it is a scroll-down menu like Github style (go check it before implement)
+
+#### 3.2.2. Component Design
+
+#### (1) Entry Component
+  - A unified format of displaying entries that returns from the request
+  - URL: /entry/[EntryId]
+  - Main content can support markdown format
+  - Topic and subtopic should be bold and have different font from the main content
+  - It should have broder line like a note-like card 
 
 ## 4. Database
 #### (1) Overview
@@ -72,14 +92,20 @@
 
 - ##### Entries: Store knowledge entries
     - EntryID (PK)
-    - Title (Unique)
+    - Title
     - Topic/SubTitle
     - Order
     - Content
     - AuthorID (FK, to Users.UserID)
+    - LanguageID (FK, to Languages.LanguageID)
     - CreatedDate
     - LastModificationID (FK, to ModificationRecords.RecordID)
     - KnowledgeLevel
+
+- ##### Languages:
+    - LanguageID(PK)
+    - LanguageCode
+    - LanguageName
 
 ##### (3) 
 ## 4. Milestones
@@ -92,3 +118,4 @@
 (4) Include richer content, including bilingual pages, advertisements, and beautiful UI
 
 (5) Achieve more mature technology, better security, and increased carrying capacity
+
