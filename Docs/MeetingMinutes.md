@@ -63,3 +63,21 @@ In the next 3.5 months, people are quite busy so no meeting happend during this 
 - Jerry: 
     - Implement `AuthController` and related code for backend. Dealine: **March 23rd 2024**
     - Generate fake data for better understanding. Dealine: **March 23rd 2024**
+
+## March 16th 2024
+#### Major Updates & Demo
+- Jerry: 
+    - AuthController PR
+- Tony & Joe
+    - DocServiceController PRs
+
+#### Action Items
+- Tony: 
+    - Review Jerry's PR
+- Joe: 
+    - Add Frontend design to design doc
+    - Assign front end tasks to everyone
+    - Merge biz layer PR
+- Jerry 
+    - Generate Dummy data
+    - Merge biz layer PR
