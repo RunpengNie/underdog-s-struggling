@@ -64,7 +64,7 @@ In the next 3.5 months, people are quite busy so no meeting happend during this 
     - Implement `AuthController` and related code for backend. Dealine: **March 23rd 2024**
     - Generate fake data for better understanding. Dealine: **March 23rd 2024**
 
-## March 16th 2024
+## Aug 31st 2024
 #### Major Updates & Demo
 - Jerry: 
     - AuthController PR
