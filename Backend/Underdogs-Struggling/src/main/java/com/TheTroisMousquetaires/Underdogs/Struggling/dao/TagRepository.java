@@ -3,7 +3,6 @@ package com.TheTroisMousquetaires.Underdogs.Struggling.dao;
 import com.TheTroisMousquetaires.Underdogs.Struggling.entity.Tag;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.*;
 import java.util.Optional;
 
 public interface TagRepository extends CrudRepository<Tag, Long>{
