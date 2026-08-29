@@ -31,10 +31,11 @@ public class User {
     public User() {
     }
 
-    public User(long userId, String email, String userName, Role role) {
+    public User(long userId, String email, String userName, String password, Role role) {
         this.userID = userId;
         this.email = email;
         this.userName = userName;
+        this.password = password;
         this.registrationDate = ZonedDateTime.now(ZoneOffset.UTC);
         this.role = role;
     }
